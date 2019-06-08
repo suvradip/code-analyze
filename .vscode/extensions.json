@@ -1,0 +1,11 @@
+{
+   "recommendations": [
+      "mikestead.dotenv",
+      "editorconfig.editorconfig",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "octref.vetur",
+      "vscode-icons-team.vscode-icons",
+      "coenraads.bracket-pair-colorizer"
+   ]
+}
