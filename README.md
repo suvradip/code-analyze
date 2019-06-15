@@ -1,4 +1,11 @@
-# code-analyze
+# code-analyzer
+
+> Code analyzer is the code analysis tool which detects syntax bugs and leaks.
+
+### Support Language list
+
+0. CSS
+1. HTML
 
 ## Build Setup
 
@@ -13,6 +20,9 @@ $ npm run dev
 $ npm run build
 $ npm start
 
+# to run unit test-cases
+$ npm test
+
 ```
 
 ### Authentication details
@@ -20,10 +30,10 @@ $ npm start
 -  username: `admin`
 -  password: `password`
 
-### On Front End
+#### On Front End
 
-I used vuejs with nuxt framework
+I used [vuejs](https://vuejs.org/) with [nuxt](https://nuxtjs.org/) framework
 
-### On Back End:
+#### On Back End:
 
-Power by Node.js
+Power by [Node.js](https://nodejs.org/en/about/)

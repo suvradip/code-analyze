@@ -1,7 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const consola = require('consola');
-const cookieParser = require('cookie-parser');
 
 const { Nuxt, Builder } = require('nuxt');
 
@@ -11,18 +9,6 @@ const app = express();
 const config = require('../nuxt.config.js');
 
 config.dev = !(process.env.NODE_ENV === 'production');
-
-app.use(cookieParser());
-
-// parse: requested data in JSON
-app.use(bodyParser.json());
-
-// parse: requested data in application/x-www-form-urlencoded
-app.use(
-   bodyParser.urlencoded({
-      extended: false,
-   })
-);
 
 async function start() {
    // Init Nuxt.js

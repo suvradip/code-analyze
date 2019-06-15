@@ -1,3 +1,4 @@
+/* test cases for front-end part */
 import { mount } from '@vue/test-utils';
 import codeSelection from '@/components/CodeSelection.vue';
 import result from '@/components/Result.vue';

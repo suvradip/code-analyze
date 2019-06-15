@@ -1,4 +1,7 @@
+require('dotenv').config();
 const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const Comb = require('csscomb');
 const jwt = require('jsonwebtoken');
 const HTMLHint = require('htmlhint').default;
@@ -8,6 +11,18 @@ const tokenVerify = require('./tokenVerify');
 const secret = process.env.SECRET || 'myLittileSecret';
 const comb = new Comb();
 const app = express();
+
+app.use(cookieParser());
+
+// parse: requested data in JSON
+app.use(bodyParser.json());
+
+// parse: requested data in application/x-www-form-urlencoded
+app.use(
+   bodyParser.urlencoded({
+      extended: false,
+   })
+);
 
 const HTML_LINT_RULES = {
    // 'doctype-first': true,
@@ -23,7 +38,10 @@ const HTML_LINT_RULES = {
 };
 
 app.get('/', (req, res, next) => {
-   res.send('Nothing is here.');
+   res.json({
+      success: true,
+      message: 'Api(s) are working fine.',
+   });
 });
 
 app.post('/authentication', (req, res, next) => {
