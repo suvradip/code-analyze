@@ -9,7 +9,6 @@ import 'prismjs';
 import 'prismjs/components/prism-markup-templating';
 import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
 import 'prismjs/themes/prism-okaidia.css';
-
 import Prism from 'vue-prism-component';
 
 export default {
@@ -20,11 +19,7 @@ export default {
    props: {
       report: {
          type: Array,
-         required: true,
-      },
-      language: {
-         type: String,
-         required: true,
+         default: () => [],
       },
    },
 

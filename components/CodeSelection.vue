@@ -13,7 +13,12 @@
 
 
 <script>
+import { BFormSelect } from 'bootstrap-vue';
+
 export default {
+   components: {
+      'b-form-select': BFormSelect,
+   },
    data: () => ({
       options: [
          { value: null, text: 'Language' },
@@ -21,7 +26,7 @@ export default {
          { value: 'html', text: 'HTML' },
       ],
       selected: null,
-      text: 'hello',
+      text: '',
       action: '/api/parse',
       cmOptions: {
          tabSize: 4,

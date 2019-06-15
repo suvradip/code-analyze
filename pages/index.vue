@@ -17,7 +17,7 @@
 import { mapState } from 'vuex';
 
 import CodeSelection from '~/components/CodeSelection.vue';
-import Result from '~/components/result.vue';
+import Result from '~/components/Result.vue';
 
 export default {
    components: {

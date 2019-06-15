@@ -39,14 +39,7 @@ module.exports = {
    /*
     ** Nuxt.js modules
     */
-   modules: [
-      // Doc: https://bootstrap-vue.js.org/docs/
-      'bootstrap-vue/nuxt',
-      // Doc: https://axios.nuxtjs.org/usage
-      '@nuxtjs/axios',
-      '@nuxtjs/pwa',
-      '@nuxtjs/eslint-module',
-   ],
+   modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/eslint-module'],
    /*
     ** Axios module configuration
     ** See https://axios.nuxtjs.org/options
