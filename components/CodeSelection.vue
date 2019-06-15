@@ -1,17 +1,13 @@
 <template>
   <div class="upload-selection p-5">
-    <b-form-select v-model="selected" :options="options"></b-form-select>
+    <p class="language-select">
+      <b-form-select v-model="selected" :options="options"></b-form-select>
+    </p>
 
-    <b-form-textarea
-      v-if="selected"
-      v-model="text"
-      class="mt-2"
-      placeholder="paste your code"
-      rows="4"
-      max-rows="10"
-    ></b-form-textarea>
-
-    <button class="btn btn-secondary mt-3" @click="processCode">Start analyse</button>
+    <no-ssr v-if="selected" placeholder="Codemirror Loading...">
+      <codemirror v-model="text" :options="cmOptions"></codemirror>
+      <button class="btn btn-secondary mt-3" @click="processCode">Start analyse</button>
+    </no-ssr>
   </div>
 </template>
 
@@ -22,13 +18,28 @@ export default {
       options: [
          { value: null, text: 'Language' },
          { value: 'css', text: 'CSS' },
-         { value: 'js', text: 'JavaScript' },
          { value: 'html', text: 'HTML' },
       ],
       selected: null,
-      text: '',
+      text: 'hello',
       action: '/api/parse',
+      cmOptions: {
+         tabSize: 4,
+         foldGutter: true,
+         styleActiveLine: true,
+         lineNumbers: true,
+         line: true,
+         keyMap: 'sublime',
+         mode: 'text/css',
+         theme: 'base16-dark',
+      },
    }),
+
+   computed: {
+      codemirror() {
+         return this.$refs.myCm.codemirror;
+      },
+   },
 
    watch: {
       selected() {
@@ -49,12 +60,22 @@ export default {
             language: this.selected,
          });
 
-         this.$store.commit('SET_ANALYZED_REPORT', data);
+         this.$store.commit('SET_ANALYZED_REPORT', data.result);
       },
    },
 };
 </script>
+
 <style lang="scss" scoped>
-.code-selection {
+.upload-selection {
+   .language-select {
+      width: 150px;
+      margin: 0 auto;
+   }
+   .vue-codemirror {
+      padding-top: 30px;
+   }
 }
 </style>
+
+

@@ -23,11 +23,19 @@ module.exports = {
    /*
     ** Global CSS
     */
-   css: ['@/assets/main.scss'],
+   css: [
+      '@/assets/main.scss',
+      // lib css
+      'codemirror/lib/codemirror.css',
+      // merge css
+      'codemirror/addon/merge/merge.css',
+      // theme css
+      'codemirror/theme/base16-dark.css',
+   ],
    /*
     ** Plugins to load before mounting the App
     */
-   plugins: ['~/plugins/prism'],
+   plugins: ['~/plugins/prism', { src: '~plugins/codemirror.js', ssr: false }],
    /*
     ** Nuxt.js modules
     */

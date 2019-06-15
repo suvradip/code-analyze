@@ -1,10 +1,8 @@
 # code-analyze
 
-> My flawless Nuxt.js project
-
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install
 
@@ -15,8 +13,17 @@ $ npm run dev
 $ npm run build
 $ npm start
 
-# generate static project
-$ npm run generate
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+### Authentication details
+
+-  username: `admin`
+-  password: `password`
+
+### On Front End
+
+I used vuejs with nuxt framework
+
+### On Back End:
+
+Power by Node.js

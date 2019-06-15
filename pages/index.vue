@@ -8,7 +8,7 @@
 
     <div v-if="report" class="result-block">
       <h5>Language: {{ language }}</h5>
-      <Editor :code="report" :language="language"/>
+      <Result :report="report" :language="language"/>
     </div>
   </div>
 </template>
@@ -17,26 +17,19 @@
 import { mapState } from 'vuex';
 
 import CodeSelection from '~/components/CodeSelection.vue';
-import Editor from '~/components/Editor.vue';
+import Result from '~/components/result.vue';
 
 export default {
    components: {
       CodeSelection,
-      Editor,
+      Result,
    },
    computed: {
       ...mapState(['language', 'resultCode', 'report']),
    },
+   middleware: 'authenticated',
 };
 </script>
 
-<style lang="scss" scoped>
-.blocks {
-   .upload-block {
-      text-align: center;
-      margin-top: 15px;
-   }
-}
-</style>
 
 
