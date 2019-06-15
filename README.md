@@ -1,11 +1,13 @@
 # code-analyzer
 
+[Project Repository](https://github.com/suvradip/code-analyze)
+
 > Code analyzer is the code analysis tool which detects syntax bugs and leaks.
 
-### Support Language list
+### Support Language list as of now
 
-0. CSS
-1. HTML
+-  CSS
+-  HTML
 
 ## Build Setup
 
@@ -32,8 +34,8 @@ $ npm test
 
 #### On Front End
 
-I used [vuejs](https://vuejs.org/) with [nuxt](https://nuxtjs.org/) framework
+I used [vuejs](https://vuejs.org/) with [nuxt](https://nuxtjs.org/) framework and also using bootstrap as css framework.
 
 #### On Back End:
 
-Power by [Node.js](https://nodejs.org/en/about/)
+Power by [Node.js](https://nodejs.org/en/about/) and npm packages.
